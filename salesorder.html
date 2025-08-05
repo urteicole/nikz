@@ -2,54 +2,336 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sales Orders</title>
+  <title>Sales Orders - Lustra Belle</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="salesorderstylesheet.css">
 </head>
 <body>
-
-  <div class="header">
-    <div class="sales-orders">
-      <h1>Sales Orders</h1>
-    </div>
-    <div class="header-right">
-      <div class="date">Today, Fri 01 August</div>
-      <div class="icons">
-        <span class="notification">🔔</span>
-        <span class="settings">⚙️</span>
-        <span class="user">👤</span>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="SkinBloom.png" alt="Lustra Belle Logo" class="logo-img">
+        <span class="logo-text">Lustra Belle</span>
       </div>
-    </div>
-  </div>
-
-  <div class="search-container">
-    <input type="text" placeholder="Search">
-  </div>
-  <div class="filter">
-        <label for="time-filter"></label>
-        <select id="time-filter">
-          <option>Last 7 days</option>
-          <option>Last 30 days</option>
-          <option>Last month</option>
-          </select>
+      <nav class="menu">
+        <ul>
+          <li>
+            <span class="icon">&#9632;</span>
+            <span>Dashboard</span>
+          </li>
+          <li>
+            <span class="icon">&#128101;</span>
+            <span>Leads & Opportunities</span>
+          </li>
+          <li class="active">
+            <span class="icon">&#128179;</span>
+            <span>Sales Orders</span>
+          </li>
+          <li>
+            <span class="icon">&#128221;</span>
+            <span>Quotations and Pricing</span>
+          </li>
+          <li>
+            <span class="icon">&#128100;</span>
+            <span>Customer Directory</span>
+          </li>
+          <li>
+            <span class="icon">&#128736;</span>
+            <span>Customer Support</span>
+          </li>
+        </ul>
+      </nav>
+      <div class="sidebar-bottom">
+        <div>
+          <span class="icon">&#128202;</span>
+          <span>Report</span>
         </div>
-
-         <div class="sidebar">
-    <div class="logo">
-      <span class="logo-icon"></span>
-      <span class="company-name">Skin Bloom -crm</span>
-    </div>
-    <ul class="nav-list">
-      <li><i class="icon">&#x1F5D2;</i> Dashboard</li>
-      <li><i class="icon">&#x1F465;</i> Leads & Opportunities</li>
-      <li class="active"><i class="icon">&#x1F4C6;</i> Sales Orders</li>
-      <li><i class="icon">&#x21C4;</i> Quotations and Pricing</li>
-      <li><i class="icon">&#x1F4CD;</i> Customer Directory</li>
-      <li><i class="icon">&#x1F6E0;</i> Customer Support</li>
-      <li><i class="icon">&#x1F4C8;</i> Report</li>
-      <li><i class="icon">&#x21A9;</i> Logout</li>
-    </ul>
+        <div>
+          <span class="icon">&#128682;</span>
+          <span>Logout</span>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Sales Orders</h1>
+        <div class="header-actions">
+          <span class="today-date">Today, Fri 01 August</span>
+          <span class="header-icon">&#128276;</span>
+          <span class="header-icon">&#9881;</span>
+          <span class="header-icon">&#128100;</span>
+        </div>
+      </header>
+      <div class="search-filter-row">
+        <div class="search-box">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="filter-dropdown">
+          <button class="dropdown-btn">Last 7 days ▼</button>
+        </div>
+      </div>
+      <section class="orders-table-section">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer Name</th>
+              <th>Order Date</th>
+              <th>Product Ordered</th>
+              <th>Qty</th>
+              <th>Total (PHP)</th>
+              <th>Payment Status</th>
+              <th>Delivery Status</th>
+              <th>Sales Rep</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SO-1001</td>
+              <td>Belle Boutique</td>
+              <td>07/17/2025</td>
+              <td>Lip Kit ×100, Primer Set ×50</td>
+              <td>150</td>
+              <td>₱85,000</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Jenna Hiponia</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1002</td>
+              <td>Zuri Collection</td>
+              <td>07/16/2025</td>
+              <td>Fragrance Bundle ×50</td>
+              <td>50</td>
+              <td>₱92,500</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-intransit">In Transit</td>
+              <td>Jane Manliguez</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1003</td>
+              <td>Ava Beauty Hub</td>
+              <td>07/15/2025</td>
+              <td>Glow Serum ×80, Lip Tint ×30</td>
+              <td>110</td>
+              <td>₱110,000</td>
+              <td class="status-unpaid">Unpaid</td>
+              <td class="status-pending">Pending</td>
+              <td>Jea Anyag</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1004</td>
+              <td>Camélia Naturals</td>
+              <td>07/18/2025</td>
+              <td>Lip + Cheek Combo Kit ×75</td>
+              <td>75</td>
+              <td>₱67,500</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Nicole Custodio</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1005</td>
+              <td>Pure & Glow</td>
+              <td>07/16/2025</td>
+              <td>Skincare VIP Kit ×30</td>
+              <td>30</td>
+              <td>₱81,000</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-intransit">In Transit</td>
+              <td>Jenna Hiponia</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1006</td>
+              <td>Glow N’ Go</td>
+              <td>07/17/2025</td>
+              <td>Whitening Cream ×60, Facial Set ×20</td>
+              <td>80</td>
+              <td>₱72,000</td>
+              <td class="status-partially">Partially Paid</td>
+              <td class="status-preparing">Preparing</td>
+              <td>Jane Manliguez</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1007</td>
+              <td>Tint Treasures</td>
+              <td>07/18/2025</td>
+              <td>Velvet Lipstick ×120</td>
+              <td>120</td>
+              <td>₱132,000</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Nicole Custodio</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1008</td>
+              <td>Luxe Glow</td>
+              <td>07/18/2025</td>
+              <td>Glow Pack ×50, Eye Cream ×30</td>
+              <td>80</td>
+              <td>₱115,000</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-intransit">In Transit</td>
+              <td>Jea Anyag</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1009</td>
+              <td>Glam Fix</td>
+              <td>07/16/2025</td>
+              <td>Trial Set ×60, Toner Pack ×40</td>
+              <td>100</td>
+              <td>₱94,000</td>
+              <td class="status-unpaid">Unpaid</td>
+              <td class="status-preparing">Preparing</td>
+              <td>Jane Manliguez</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1010</td>
+              <td>Lavish Looks</td>
+              <td>07/19/2025</td>
+              <td>Lip Balm ×100, Primer Duo ×50</td>
+              <td>150</td>
+              <td>₱98,500</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Nicole Custodio</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1011</td>
+              <td>Glow by Mia</td>
+              <td>07/18/2025</td>
+              <td>Lip & Cheek Stain Set ×15</td>
+              <td>15</td>
+              <td>₱11,250</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-intransit">In Transit</td>
+              <td>Jane Manliguez</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1012</td>
+              <td>Creme & Co.</td>
+              <td>07/19/2025</td>
+              <td>Glow Serum Duo ×8</td>
+              <td>8</td>
+              <td>₱9,360</td>
+              <td class="status-pending">Pending</td>
+              <td class="status-processing">Processing</td>
+              <td>Jea Anyag</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1013</td>
+              <td>The Blush Club</td>
+              <td>07/20/2025</td>
+              <td>Matte Lipstick Trio ×10</td>
+              <td>10</td>
+              <td>₱8,500</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Nicole Custodio</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1014</td>
+              <td>Pearl & Peony</td>
+              <td>07/18/2025</td>
+              <td>Skin Brightening Kit ×5</td>
+              <td>5</td>
+              <td>₱6,750</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-delivered">Delivered</td>
+              <td>Nicole Custodio</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1015</td>
+              <td>SkinMuse</td>
+              <td>07/21/2025</td>
+              <td>Pore Minimizing Primer ×12</td>
+              <td>12</td>
+              <td>₱7,800</td>
+              <td class="status-pending">Pending</td>
+              <td class="status-onhold">On Hold</td>
+              <td>Jea Anyag</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+            <tr>
+              <td>SO-1016</td>
+              <td>Bella’s Vanity</td>
+              <td>07/19/2025</td>
+              <td>Complete Skincare Pack ×3</td>
+              <td>3</td>
+              <td>₱5,700</td>
+              <td class="status-paid">Paid</td>
+              <td class="status-intransit">In Transit</td>
+              <td>Jenna Hiponia</td>
+              <td class="actions">
+                <span class="action-icon">&#9998;</span>
+                <span class="action-icon">&#128465;</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
   </div>
-
 </body>
 </html>
